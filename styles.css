@@ -1,0 +1,22 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#buttonCambiaColor {
+  background-color: blue;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3 ease;
+  margin-top: 10px;
+}
+
+#buttonCambiaColor.rojo {
+  background-color: red;
+}
