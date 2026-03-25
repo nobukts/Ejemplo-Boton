@@ -1,22 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #f2f4f8;
 }
 
-#buttonCambiaColor {
-  background-color: blue;
-  color: white;
-  padding: 15px 30px;
-  font-size: 20px;
-  border-radius: 10px;
+.card {
+  width: min(420px, 92vw);
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.6rem;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tab {
+  border: 1px solid #cfd5e1;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3 ease;
-  margin-top: 10px;
 }
 
-#buttonCambiaColor.rojo {
-  background-color: red;
+.tab.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.status {
+  min-height: 20px;
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.ok {
+  color: #15803d;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.form {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  display: block;
+  margin: 10px 0 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd5e1;
+  border-radius: 8px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1d4ed8;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.panel {
+  margin-top: 8px;
+  padding: 14px;
+  border: 1px solid #cfd5e1;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.panel p {
+  margin: 8px 0;
+}
+
+#logout-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px solid #cfd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #ffffff;
+  font-weight: 700;
 }
