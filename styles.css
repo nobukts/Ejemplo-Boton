@@ -2,15 +2,38 @@
   box-sizing: border-box;
 }
 
+/* Estructura general de la pagina y fondo principal. */
 body {
   margin: 0;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background: #f2f4f8;
 }
 
+/* Pie de pagina fijo al final con color de acento del proyecto. */
+.site-footer {
+  background: #1d4ed8;
+  color: #ffffff;
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* Contenedor central que mantiene la tarjeta alineada al centro. */
+.content {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px 12px;
+}
+
+/* Tarjeta principal de autenticacion. */
 .card {
   width: min(420px, 92vw);
   background: #ffffff;
@@ -19,11 +42,12 @@ body {
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+h2 {
   margin: 0 0 16px;
   font-size: 1.6rem;
 }
 
+/* Pestañas para alternar entre login y registro. */
 .tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -45,6 +69,7 @@ h1 {
   border-color: #2563eb;
 }
 
+/* Mensajes de estado y variantes de color segun resultado. */
 .status {
   min-height: 20px;
   margin: 0 0 10px;
@@ -68,6 +93,7 @@ h1 {
   display: none;
 }
 
+/* Etiquetas y campos de formulario. */
 label {
   display: block;
   margin: 10px 0 6px;
@@ -80,6 +106,7 @@ input {
   border-radius: 8px;
 }
 
+/* Boton principal para enviar formularios. */
 button[type="submit"] {
   width: 100%;
   margin-top: 14px;
@@ -92,6 +119,7 @@ button[type="submit"] {
   font-weight: 700;
 }
 
+/* Panel mostrado despues de iniciar sesion o registrarse. */
 .panel {
   margin-top: 8px;
   padding: 14px;
@@ -100,7 +128,7 @@ button[type="submit"] {
   background: #f8fbff;
 }
 
-.panel h2 {
+.panel h3 {
   margin: 0 0 12px;
   font-size: 1.15rem;
 }
@@ -109,6 +137,7 @@ button[type="submit"] {
   margin: 8px 0;
 }
 
+/* Boton secundario para cerrar sesion. */
 #logout-btn {
   width: 100%;
   margin-top: 12px;

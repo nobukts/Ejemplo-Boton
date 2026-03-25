@@ -7,83 +7,101 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="card">
-      <h1>Mi cuenta</h1>
+    <main class="content">
+      <section class="card">
+        <h2>Mi cuenta</h2>
 
-      <div class="tabs">
-        <button id="tab-login" class="tab active" type="button">
-          Iniciar sesion
-        </button>
-        <button id="tab-register" class="tab" type="button">Registrarse</button>
-      </div>
+        <div class="tabs">
+          <button id="tab-login" class="tab active" type="button">
+            Iniciar sesión
+          </button>
+          <button id="tab-register" class="tab" type="button">
+            Registrarse
+          </button>
+        </div>
 
-      <p id="status" class="status"></p>
+        <p id="status" class="status"></p>
 
-      <form id="login-form" class="form" novalidate>
-        <label for="login-email">Correo</label>
-        <input
-          id="login-email"
-          type="email"
-          placeholder="correo@ejemplo.com"
-          required
-        />
+        <form id="login-form" class="form" novalidate>
+          <label for="login-email">Correo</label>
+          <input
+            id="login-email"
+            type="email"
+            placeholder="correo@ejemplo.com"
+            required
+          />
 
-        <label for="login-password">Contrasena</label>
-        <input
-          id="login-password"
-          type="password"
-          placeholder="Minimo 6 caracteres"
-          required
-        />
+          <label for="login-password">Contraseña</label>
+          <input
+            id="login-password"
+            type="password"
+            placeholder="Mínimo 6 caracteres"
+            required
+          />
 
-        <button type="submit">Entrar</button>
-      </form>
+          <button type="submit">Entrar</button>
+        </form>
 
-      <form id="register-form" class="form hidden" novalidate>
-        <label for="register-name">Nombre</label>
-        <input
-          id="register-name"
-          type="text"
-          placeholder="Tu nombre"
-          required
-        />
+        <form id="register-form" class="form hidden" novalidate>
+          <label for="register-name">Nombre</label>
+          <input
+            id="register-name"
+            type="text"
+            placeholder="Tu nombre"
+            required
+          />
 
-        <label for="register-email">Correo</label>
-        <input
-          id="register-email"
-          type="email"
-          placeholder="correo@ejemplo.com"
-          required
-        />
+          <label for="register-rut">RUT</label>
+          <input
+            id="register-rut"
+            type="text"
+            placeholder="12345678-9"
+            required
+          />
 
-        <label for="register-password">Contrasena</label>
-        <input
-          id="register-password"
-          type="password"
-          placeholder="Minimo 8 caracteres"
-          required
-        />
+          <label for="register-email">Correo</label>
+          <input
+            id="register-email"
+            type="email"
+            placeholder="correo@ejemplo.com"
+            required
+          />
 
-        <label for="register-confirm">Confirmar contrasena</label>
-        <input
-          id="register-confirm"
-          type="password"
-          placeholder="Repite tu contrasena"
-          required
-        />
+          <label for="register-password">Contraseña</label>
+          <input
+            id="register-password"
+            type="password"
+            placeholder="Mínimo 8 caracteres"
+            required
+          />
 
-        <button type="submit">Crear cuenta</button>
-      </form>
+          <label for="register-confirm">Confirmar contraseña</label>
+          <input
+            id="register-confirm"
+            type="password"
+            placeholder="Repite tu contraseña"
+            required
+          />
 
-      <section id="user-panel" class="panel hidden" aria-live="polite">
-        <h2>Panel de usuario</h2>
-        <p><strong>Nombre:</strong> <span id="panel-name">-</span></p>
-        <p><strong>Correo:</strong> <span id="panel-email">-</span></p>
-        <p><strong>Estado:</strong> <span id="panel-state">Activo</span></p>
-        <button id="logout-btn" type="button">Cerrar sesion</button>
+          <button type="submit">Crear cuenta</button>
+        </form>
+
+        <section id="user-panel" class="panel hidden" aria-live="polite">
+          <h3>Panel de usuario</h3>
+          <p id="panel-name">Nombre: -</p>
+          <p id="panel-rut">RUT: -</p>
+          <p id="panel-email">Correo: -</p>
+          <p id="panel-state">Estado: Activo</p>
+          <button id="logout-btn" type="button">Cerrar sesión</button>
+        </section>
       </section>
     </main>
 
+    <footer class="site-footer">
+      <p>Ejemplo de autenticación - 2026</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="boton.js"></script>
   </body>
 </html>
