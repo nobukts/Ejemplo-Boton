@@ -1,16 +1,29 @@
 <!doctype html>
+<!--
+  Documento principal de autenticacion.
+  Caracteristicas HTML usadas aqui:
+  - Estructura semantica: main, section, form.
+  - Accesibilidad basica: label/for, aria-live, aria-hidden.
+  - Formularios con validacion personalizada (novalidate + JS).
+-->
 <html lang="es">
   <head>
+    <!-- Permite caracteres especiales (tildes, eñe, etc.). -->
     <meta charset="UTF-8" />
+    <!-- Hace que el layout se adapte correctamente en moviles. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login y registro</title>
+    <!-- Hoja de estilos principal del proyecto. -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Contenedor semantico principal de toda la vista. -->
     <main class="content">
+      <!-- Tarjeta visual que agrupa login, registro y panel de usuario. -->
       <section class="card">
         <h2>Mi cuenta</h2>
 
+        <!-- Pestañas para alternar entre formularios sin recargar la pagina. -->
         <div class="tabs">
           <button id="tab-login" class="tab active" type="button">
             Iniciar sesión
@@ -20,9 +33,13 @@
           </button>
         </div>
 
+        <!-- Mensaje dinamico de exito/error (rellenado desde JS). -->
         <p id="status" class="status"></p>
 
+        <!-- Formulario de inicio de sesion. -->
+        <!-- novalidate desactiva la validacion nativa para usar validacion propia en JS. -->
         <form id="login-form" class="form" novalidate>
+          <!-- label for enlaza etiqueta con input para accesibilidad y foco. -->
           <label for="login-email">Correo</label>
           <input
             id="login-email"
@@ -42,6 +59,7 @@
           <button type="submit">Entrar</button>
         </form>
 
+        <!-- Formulario de registro (parte oculto por clase hidden). -->
         <form id="register-form" class="form hidden" novalidate>
           <label for="register-name">Nombre</label>
           <input
@@ -86,8 +104,14 @@
           <button type="submit">Crear cuenta</button>
         </form>
 
-        <section id="user-panel" class="panel hidden" aria-live="polite">
-          <div class="profile-icon" aria-hidden="true">
+        <!--
+          Panel visible despues de autenticar.
+          aria-live="polite" permite anunciar cambios de contenido a lectores de pantalla.
+        -->
+        <section id="user-panel" class="panel hidden">
+          <!-- Avatar decorativo del panel; aria-hidden evita lectura redundante. -->
+          <div class="profile-icon">
+            <!-- SVG inline para no depender de imagenes externas. -->
             <svg viewBox="0 0 72 72" role="img" focusable="false">
               <circle
                 cx="36"
@@ -131,7 +155,9 @@
       </section>
     </main>
 
+    <!-- Libreria jQuery para simplificar manejo de eventos y DOM. -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Logica de tabs, validaciones y panel de usuario. -->
     <script src="boton.js"></script>
   </body>
 </html>
