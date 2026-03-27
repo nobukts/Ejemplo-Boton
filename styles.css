@@ -1,17 +1,34 @@
+/*
+  styles.css
+  Caracteristicas CSS destacadas:
+  - Modelo de caja consistente con box-sizing global.
+  - Maquetacion centrada con Grid y Flex.
+  - Clases de estado reutilizables (active, hidden, ok, error).
+  - Estilos por componente: tarjeta, formularios, panel y botones.
+*/
+
 * {
+  /* Incluye padding y borde dentro del ancho/alto total del elemento. */
   box-sizing: border-box;
 }
 
 /* Base del layout: ocupa toda la pantalla y organiza header/contenido/footer. */
 body {
+  /* Elimina el margen por defecto del navegador. */
   margin: 0;
+  /* Garantiza que el body ocupe como minimo toda la altura visible. */
   min-height: 100vh;
+  /* Activa Flexbox para organizar los hijos en una sola direccion. */
   display: flex;
+  /* Apila elementos de arriba hacia abajo. */
   flex-direction: column;
+  /* Define tipografia base del sitio. */
   font-family: Arial, sans-serif;
+  /* Color de fondo general de la pagina. */
   background: #f2f4f8;
 }
 
+<<<<<<< HEAD
 /* Pie de página visualmente separado del contenido principal. */
 .site-footer {
   background: #1d4ed8;
@@ -26,125 +43,222 @@ body {
 }
 
 /* Área central: centra la tarjeta de autenticación horizontal y verticalmente. */
+=======
+/* Contenedor central que mantiene la tarjeta alineada al centro. */
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
 .content {
+  /* Hace que este contenedor crezca y ocupe espacio disponible. */
   flex: 1;
+  /* Activa CSS Grid para centrar contenido facilmente. */
   display: grid;
+  /* Centra elementos horizontal y verticalmente en la celda. */
   place-items: center;
+  /* Agrega espacio interior para que no toque bordes en pantallas pequenas. */
   padding: 24px 12px;
 }
 
 /* Tarjeta principal donde vive todo el flujo de login/registro. */
 .card {
+  /* Limita el ancho maximo y lo adapta a viewport pequeno. */
   width: min(420px, 92vw);
+  /* Fondo blanco de la tarjeta. */
   background: #ffffff;
+  /* Espaciado interno del contenido. */
   padding: 24px;
+  /* Redondea las esquinas del panel principal. */
   border-radius: 12px;
+  /* Sombra suave para separarla del fondo. */
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
+  /* Quita margen superior y deja separacion inferior. */
   margin: 0 0 16px;
+  /* Tamano del titulo principal. */
   font-size: 1.6rem;
 }
 
 /* Navegación por pestañas para cambiar de formulario sin recargar la página. */
 .tabs {
+  /* Muestra botones en grid. */
   display: grid;
+  /* Crea dos columnas iguales para Login y Registro. */
   grid-template-columns: 1fr 1fr;
+  /* Separacion entre ambos botones. */
   gap: 8px;
+  /* Margen inferior antes del siguiente bloque. */
   margin-bottom: 14px;
 }
 
 .tab {
+  /* Estilo base comun para ambos botones de pestaña. */
+  /* Borde neutro del boton. */
   border: 1px solid #cfd5e1;
+  /* Fondo blanco por defecto. */
   background: #ffffff;
+  /* Espacio interno del boton. */
   padding: 10px;
+  /* Esquinas redondeadas. */
   border-radius: 8px;
+  /* Cambia cursor para indicar que es clickeable. */
   cursor: pointer;
 }
 
 .tab.active {
+  /* Estado visual cuando una pestaña esta seleccionada. */
+  /* Fondo azul para destacar la pestana activa. */
   background: #2563eb;
+  /* Texto blanco para contraste. */
   color: #ffffff;
+  /* Borde del mismo color del fondo activo. */
   border-color: #2563eb;
 }
 
 /* Mensajes de estado y colores semánticos para feedback al usuario. */
 .status {
+  /* Reserva espacio para evitar saltos de layout al mostrar mensajes. */
   min-height: 20px;
+  /* Margen inferior antes de formularios. */
   margin: 0 0 10px;
+  /* Tamano de fuente del mensaje de estado. */
   font-size: 0.95rem;
+  /* Peso fuerte para mensajes importantes. */
   font-weight: 700;
 }
 
 .ok {
+  /* Color para mensajes positivos. */
   color: #15803d;
 }
 
 .error {
+  /* Color para mensajes de error. */
   color: #dc2626;
 }
 
 .form {
+  /* Se mantiene como bloque para ocupar ancho de la tarjeta. */
   display: block;
 }
 
 .hidden {
+  /* Clase utilitaria para ocultar elementos desde JS. */
   display: none;
 }
 
 /* Estilo base para campos y etiquetas de captura de datos. */
 label {
+  /* Hace que cada etiqueta ocupe su propia linea. */
   display: block;
+  /* Separa etiqueta del campo anterior y del input asociado. */
   margin: 10px 0 6px;
 }
 
 input {
+  /* Campos de texto adaptables al ancho del contenedor. */
+  /* Hace que el input ocupe todo el ancho util. */
   width: 100%;
+  /* Espaciado interior para mejor lectura. */
   padding: 10px;
+  /* Borde suave del campo. */
   border: 1px solid #cfd5e1;
+  /* Esquinas redondeadas del input. */
   border-radius: 8px;
 }
 
 /* Botón principal de acción (enviar login/registro). */
 button[type="submit"] {
+  /* Hace que el boton ocupe todo el ancho del formulario. */
   width: 100%;
+  /* Espacio superior respecto al ultimo input. */
   margin-top: 14px;
+  /* Espaciado interno del boton. */
   padding: 10px;
+  /* Elimina borde por defecto del navegador. */
   border: none;
+  /* Redondea esquinas del boton. */
   border-radius: 8px;
+  /* Cursor de accion para indicar interactividad. */
   cursor: pointer;
+  /* Color principal de accion. */
   background: #1d4ed8;
+  /* Texto blanco para contraste alto. */
   color: #ffffff;
+  /* Resalta el texto del boton. */
   font-weight: 700;
 }
 
 /* Panel resumen visible tras autenticación exitosa. */
 .panel {
+  /* Caja informativa visible tras autenticar. */
+  /* Espacio superior respecto a los formularios. */
   margin-top: 8px;
+  /* Espaciado interno de la caja. */
   padding: 14px;
+  /* Borde suave para delimitar el panel. */
   border: 1px solid #cfd5e1;
+  /* Esquinas redondeadas del panel. */
   border-radius: 8px;
+  /* Fondo levemente azulado para distinguir del resto. */
   background: #f8fbff;
 }
 
+.profile-icon {
+  /* Contenedor circular del avatar SVG. */
+  /* Ancho del avatar. */
+  width: 78px;
+  /* Alto del avatar. */
+  height: 78px;
+  /* Centra el bloque horizontalmente y deja margen inferior. */
+  margin: 0 auto 10px;
+  /* Fuerza forma circular. */
+  border-radius: 999px;
+  /* Grid para centrar el SVG internamente. */
+  display: grid;
+  /* Centrado horizontal y vertical del contenido interno. */
+  place-items: center;
+  /* Sin fondo extra; se ve el propio SVG. */
+  background: transparent;
+}
+
+.profile-icon svg {
+  /* El SVG rellena completamente el contenedor circular. */
+  /* Ajusta el ancho del SVG al 100% del contenedor. */
+  width: 100%;
+  /* Ajusta la altura del SVG al 100% del contenedor. */
+  height: 100%;
+}
+
 .panel h3 {
+  /* Quita margen superior y separa del contenido siguiente. */
   margin: 0 0 12px;
+  /* Tamano del titulo del panel. */
   font-size: 1.15rem;
+  /* Centra el titulo horizontalmente. */
+  text-align: center;
 }
 
 .panel p {
+  /* Separacion vertical uniforme en datos del panel. */
   margin: 8px 0;
 }
 
 /* Botón secundario para cerrar sesión y volver al login. */
 #logout-btn {
+  /* Boton de ancho completo dentro del panel. */
   width: 100%;
+  /* Separacion superior respecto a los datos del usuario. */
   margin-top: 12px;
+  /* Espaciado interno para area clickeable comoda. */
   padding: 10px;
+  /* Borde visible para estilo secundario. */
   border: 1px solid #cfd5e1;
+  /* Esquinas redondeadas. */
   border-radius: 8px;
+  /* Cursor de accion. */
   cursor: pointer;
+  /* Fondo blanco para diferenciarlo del boton principal. */
   background: #ffffff;
+  /* Texto en negrita para mejor jerarquia visual. */
   font-weight: 700;
 }

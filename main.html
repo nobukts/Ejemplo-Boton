@@ -1,18 +1,27 @@
 <!doctype html>
+<!--
+  Documento principal de autenticacion.
+  Caracteristicas HTML usadas aqui:
+  - Estructura semantica: main, section, form.
+  - Accesibilidad basica: label/for, aria-live, aria-hidden.
+  - Formularios con validacion personalizada (novalidate + JS).
+-->
 <html lang="es">
   <head>
+    <!-- Permite caracteres especiales (tildes, eñe, etc.). -->
     <meta charset="UTF-8" />
+    <!-- Hace que el layout se adapte correctamente en moviles. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login y registro</title>
+    <!-- Hoja de estilos principal del proyecto. -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Contenedor principal de la interfaz de autenticación. -->
     <main class="content">
+      <!-- Tarjeta visual que agrupa login, registro y panel de usuario. -->
       <section class="card">
         <h2>Mi cuenta</h2>
 
-        <!-- Pestañas para alternar entre login y registro. -->
         <div class="tabs">
           <button id="tab-login" class="tab active" type="button">
             Iniciar sesión
@@ -22,11 +31,10 @@
           </button>
         </div>
 
-        <!-- Zona de mensajes de validación (error/ok). -->
         <p id="status" class="status"></p>
 
-        <!-- Formulario de inicio de sesión. -->
         <form id="login-form" class="form" novalidate>
+          <!-- label for enlaza etiqueta con input para accesibilidad y foco. -->
           <label for="login-email">Correo</label>
           <input
             id="login-email"
@@ -46,7 +54,6 @@
           <button type="submit">Entrar</button>
         </form>
 
-        <!-- Formulario de creación de cuenta. -->
         <form id="register-form" class="form hidden" novalidate>
           <label for="register-name">Nombre</label>
           <input
@@ -76,7 +83,7 @@
           <input
             id="register-password"
             type="password"
-            placeholder="Mínimo 8 caracteres"
+            placeholder="Mínimo 6 caracteres"
             required
           />
 
@@ -91,7 +98,6 @@
           <button type="submit">Crear cuenta</button>
         </form>
 
-        <!-- Panel visible luego de autenticar (simulado en frontend). -->
         <section id="user-panel" class="panel hidden" aria-live="polite">
           <h3>Panel de usuario</h3>
           <p id="panel-name">Nombre: -</p>
@@ -103,13 +109,12 @@
       </section>
     </main>
 
-    <!-- Pie de página informativo del ejemplo. -->
     <footer class="site-footer">
       <p>Ejemplo de autenticación - 2026</p>
     </footer>
 
-    <!-- Dependencias y lógica de interacción de la página. -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Logica de tabs, validaciones y panel de usuario. -->
     <script src="boton.js"></script>
   </body>
 </html>

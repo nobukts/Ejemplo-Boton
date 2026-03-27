@@ -1,6 +1,21 @@
+/*
+  boton.js
+  Caracteristicas JS/jQuery usadas:
+  - $(function() {}): ejecuta el codigo cuando el DOM esta listo.
+  - Cache de selectores: mejora legibilidad y evita repetir busquedas.
+  - Manipulacion de clases CSS para cambiar vistas (hidden/active).
+  - Validacion en cliente para login y registro.
+  - Formateo y validacion de RUT antes de mostrar datos.
+*/
+
 $(function () {
+<<<<<<< HEAD
   // Referencias a elementos clave del DOM.
   // Se guardan una sola vez para evitar búsquedas repetidas en cada interacción.
+=======
+  // Referencias a elementos clave de interfaz.
+  // Se cachean los selectores para no buscarlos en el DOM en cada evento.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   const $tabLogin = $("#tab-login");
   const $tabRegister = $("#tab-register");
   const $loginForm = $("#login-form");
@@ -13,13 +28,23 @@ $(function () {
   const $panelState = $("#panel-state");
   const $logoutBtn = $("#logout-btn");
 
+<<<<<<< HEAD
   // Muestra mensajes de estado (error/ok) con un único punto de control.
+=======
+  // Utilidad de mensajeria: aplica texto y clase visual (ok/error).
+  // Se centraliza el mensaje para mantener un solo punto de estilo y texto.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function showMessage(text, type) {
     $status.text(text).attr("class", "status " + type);
   }
 
+<<<<<<< HEAD
   // Cambia entre las vistas de autenticación: login o registro.
   // También limpia mensajes y oculta el panel final si estaba visible.
+=======
+  // Controla que vista se muestra: login o registro.
+  // Una sola funcion evita duplicar logica entre login y registro.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function showAuthView(view) {
     const isLogin = view === "login";
 
@@ -31,12 +56,22 @@ $(function () {
     showMessage("", "");
   }
 
+<<<<<<< HEAD
   // Validación simple de email para entregar feedback inmediato.
+=======
+  // Validacion minima de correo para demostracion.
+  // Validacion simple para feedback inmediato sin complejidad extra.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function isEmailValid(email) {
     return email.includes("@") && email.includes(".");
   }
 
+<<<<<<< HEAD
   // Formatea el RUT mientras se escribe (ejemplo: 12345678K -> 12.345.678-K).
+=======
+  // Formatea el RUT mientras se escribe: 12345678K -> 12.345.678-K.
+  // Se formatea en vivo para guiar al usuario y reducir errores de ingreso.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function formatRutInput(value) {
     const clean = value
       .replace(/[^0-9kK]/g, "")
@@ -54,7 +89,12 @@ $(function () {
     return bodyWithDots + "-" + dv;
   }
 
+<<<<<<< HEAD
   // Normaliza el RUT a un formato canónico sin puntos para validar/almacenar.
+=======
+  // Convierte cualquier entrada de RUT al formato base numero-digito.
+  // Se normaliza a un formato canonico antes de validar/guardar datos.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function normalizeRut(rut) {
     const clean = rut.replace(/[^0-9kK]/g, "").toUpperCase();
 
@@ -67,11 +107,17 @@ $(function () {
     return body + "-" + dv;
   }
 
+  // Regla simplificada de estructura de RUT: 7-8 digitos + guion + DV.
   function isRutValid(rut) {
     return /^\d{7,8}-[0-9K]$/.test(rut);
   }
 
+<<<<<<< HEAD
   // Muestra el panel final con los datos del usuario y oculta formularios/pestañas.
+=======
+  // Carga datos del usuario en el panel y oculta formularios.
+  // El panel resume los datos finales y oculta pasos ya completados.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   function showPanel(name, email, stateText, rut) {
     $panelName.text("Nombre: " + name);
     $panelRut.text("RUT: " + (rut && rut !== "-" ? formatRutInput(rut) : "-"));
@@ -86,7 +132,12 @@ $(function () {
     showMessage("", "");
   }
 
+<<<<<<< HEAD
   // Login: evita recarga de página, valida campos y muestra el panel.
+=======
+  // Evento submit del login.
+  // Se evita el submit real para manejar validacion y UX en cliente.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   $loginForm.on("submit", function (event) {
     event.preventDefault();
     const email = $("#login-email").val().trim();
@@ -105,7 +156,12 @@ $(function () {
     showPanel("Usuario", email, "Sesión iniciada", "-");
   });
 
+<<<<<<< HEAD
   // Registro: formatea y valida datos antes de confirmar el alta.
+=======
+  // Evento submit del registro.
+  // En registro: primero se normaliza/valida, luego se confirma resultado.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   $registerForm.on("submit", function (event) {
     event.preventDefault();
     const name = $("#register-name").val().trim();
@@ -145,12 +201,22 @@ $(function () {
     showPanel(name, email, "Cuenta registrada", rut);
   });
 
+<<<<<<< HEAD
   // Aplica formato de RUT en tiempo real para mantener una entrada consistente.
+=======
+  // Evento input: reformatea el RUT en tiempo real.
+  // Formateo por input para que el RUT siempre se vea consistente al escribir.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   $("#register-rut").on("input", function () {
     $(this).val(formatRutInput($(this).val()));
   });
 
+<<<<<<< HEAD
   // Navegación entre pestañas de autenticación.
+=======
+  // Eventos click de navegacion y cierre de sesion.
+  // Se llama directo a showAuthView para reducir funciones intermedias.
+>>>>>>> b68f5982bbbd5280fea5d9f3d9786362039e28cd
   $tabLogin.on("click", function () {
     showAuthView("login");
   });
