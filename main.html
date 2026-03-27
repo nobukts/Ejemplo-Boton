@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Contenedor principal de la interfaz de autenticación. -->
     <main class="content">
       <section class="card">
         <h2>Mi cuenta</h2>
 
+        <!-- Pestañas para alternar entre login y registro. -->
         <div class="tabs">
           <button id="tab-login" class="tab active" type="button">
             Iniciar sesión
@@ -20,8 +22,10 @@
           </button>
         </div>
 
+        <!-- Zona de mensajes de validación (error/ok). -->
         <p id="status" class="status"></p>
 
+        <!-- Formulario de inicio de sesión. -->
         <form id="login-form" class="form" novalidate>
           <label for="login-email">Correo</label>
           <input
@@ -42,6 +46,7 @@
           <button type="submit">Entrar</button>
         </form>
 
+        <!-- Formulario de creación de cuenta. -->
         <form id="register-form" class="form hidden" novalidate>
           <label for="register-name">Nombre</label>
           <input
@@ -86,6 +91,7 @@
           <button type="submit">Crear cuenta</button>
         </form>
 
+        <!-- Panel visible luego de autenticar (simulado en frontend). -->
         <section id="user-panel" class="panel hidden" aria-live="polite">
           <h3>Panel de usuario</h3>
           <p id="panel-name">Nombre: -</p>
@@ -97,10 +103,12 @@
       </section>
     </main>
 
+    <!-- Pie de página informativo del ejemplo. -->
     <footer class="site-footer">
       <p>Ejemplo de autenticación - 2026</p>
     </footer>
 
+    <!-- Dependencias y lógica de interacción de la página. -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="boton.js"></script>
   </body>

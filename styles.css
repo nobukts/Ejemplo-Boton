@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/* Estructura general de la pagina y fondo principal. */
+/* Base del layout: ocupa toda la pantalla y organiza header/contenido/footer. */
 body {
   margin: 0;
   min-height: 100vh;
@@ -12,7 +12,7 @@ body {
   background: #f2f4f8;
 }
 
-/* Pie de pagina fijo al final con color de acento del proyecto. */
+/* Pie de página visualmente separado del contenido principal. */
 .site-footer {
   background: #1d4ed8;
   color: #ffffff;
@@ -25,7 +25,7 @@ body {
   font-size: 0.92rem;
 }
 
-/* Contenedor central que mantiene la tarjeta alineada al centro. */
+/* Área central: centra la tarjeta de autenticación horizontal y verticalmente. */
 .content {
   flex: 1;
   display: grid;
@@ -33,7 +33,7 @@ body {
   padding: 24px 12px;
 }
 
-/* Tarjeta principal de autenticacion. */
+/* Tarjeta principal donde vive todo el flujo de login/registro. */
 .card {
   width: min(420px, 92vw);
   background: #ffffff;
@@ -47,7 +47,7 @@ h2 {
   font-size: 1.6rem;
 }
 
-/* Pestañas para alternar entre login y registro. */
+/* Navegación por pestañas para cambiar de formulario sin recargar la página. */
 .tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -69,7 +69,7 @@ h2 {
   border-color: #2563eb;
 }
 
-/* Mensajes de estado y variantes de color segun resultado. */
+/* Mensajes de estado y colores semánticos para feedback al usuario. */
 .status {
   min-height: 20px;
   margin: 0 0 10px;
@@ -93,7 +93,7 @@ h2 {
   display: none;
 }
 
-/* Etiquetas y campos de formulario. */
+/* Estilo base para campos y etiquetas de captura de datos. */
 label {
   display: block;
   margin: 10px 0 6px;
@@ -106,7 +106,7 @@ input {
   border-radius: 8px;
 }
 
-/* Boton principal para enviar formularios. */
+/* Botón principal de acción (enviar login/registro). */
 button[type="submit"] {
   width: 100%;
   margin-top: 14px;
@@ -119,7 +119,7 @@ button[type="submit"] {
   font-weight: 700;
 }
 
-/* Panel mostrado despues de iniciar sesion o registrarse. */
+/* Panel resumen visible tras autenticación exitosa. */
 .panel {
   margin-top: 8px;
   padding: 14px;
@@ -137,7 +137,7 @@ button[type="submit"] {
   margin: 8px 0;
 }
 
-/* Boton secundario para cerrar sesion. */
+/* Botón secundario para cerrar sesión y volver al login. */
 #logout-btn {
   width: 100%;
   margin-top: 12px;
